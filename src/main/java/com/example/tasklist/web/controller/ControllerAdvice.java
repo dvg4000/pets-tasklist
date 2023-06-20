@@ -22,21 +22,21 @@ public class ControllerAdvice {
     @ExceptionHandler(ResourceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ExceptionBody handleResourceNotFound(ResourceNotFoundException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody(e.getMessage());
     }
 
     @ExceptionHandler(ResourceMappingException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ExceptionBody handleResourceMapping(ResourceMappingException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody(e.getMessage());
     }
 
     @ExceptionHandler(IllegalStateException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionBody handleIllegalState(IllegalStateException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody(e.getMessage());
     }
 
@@ -49,7 +49,7 @@ public class ControllerAdvice {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionBody handleMethodArgumentNotValid(MethodArgumentNotValidException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody(
                 "Validation failed.",
                 e.getBindingResult().getFieldErrors()
@@ -64,7 +64,7 @@ public class ControllerAdvice {
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionBody handleConstraintViolation(ConstraintViolationException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody(
                 "Validation failed.",
                 e.getConstraintViolations().stream()
@@ -78,14 +78,14 @@ public class ControllerAdvice {
     @ExceptionHandler(AuthenticationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionBody handleAuthentication(AuthenticationException e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody("Authentication failed.");
     }
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ExceptionBody handleException(Exception e) {
-//        e.printStackTrace();
+        e.printStackTrace();
         return new ExceptionBody("Internal error.");
     }
 }
