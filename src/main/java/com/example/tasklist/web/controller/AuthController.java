@@ -5,7 +5,7 @@ import com.example.tasklist.service.AuthService;
 import com.example.tasklist.service.UserService;
 import com.example.tasklist.web.dto.auth.JwtRequest;
 import com.example.tasklist.web.dto.auth.JwtResponse;
-import com.example.tasklist.web.dto.mapper.UserMapper;
+import com.example.tasklist.web.mapper.UserMapper;
 import com.example.tasklist.web.dto.user.UserDto;
 import com.example.tasklist.web.dto.validation.OnCreate;
 import io.swagger.v3.oas.annotations.tags.Tag;

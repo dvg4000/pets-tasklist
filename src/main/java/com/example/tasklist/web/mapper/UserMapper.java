@@ -1,11 +1,9 @@
-package com.example.tasklist.web.dto.mapper;
+package com.example.tasklist.web.mapper;
 
 import com.example.tasklist.domain.user.User;
 import com.example.tasklist.web.dto.user.UserDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface UserMapper {
-    UserDto toDto(User user);
-    User toEntity(UserDto dto);
+public interface UserMapper extends Mappable<User, UserDto> {
 }
