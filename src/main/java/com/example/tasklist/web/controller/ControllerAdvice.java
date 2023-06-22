@@ -2,7 +2,6 @@ package com.example.tasklist.web.controller;
 
 import com.example.tasklist.domain.exception.AccessDeniedException;
 import com.example.tasklist.domain.exception.ExceptionBody;
-import com.example.tasklist.domain.exception.ResourceMappingException;
 import com.example.tasklist.domain.exception.ResourceNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -22,13 +21,6 @@ public class ControllerAdvice {
     @ExceptionHandler(ResourceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ExceptionBody handleResourceNotFound(ResourceNotFoundException e) {
-        e.printStackTrace();
-        return new ExceptionBody(e.getMessage());
-    }
-
-    @ExceptionHandler(ResourceMappingException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ExceptionBody handleResourceMapping(ResourceMappingException e) {
         e.printStackTrace();
         return new ExceptionBody(e.getMessage());
     }
